@@ -1,0 +1,50 @@
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String        @id @default(uuid())
+  username     String        @unique
+  passwordHash String
+  createdAt    DateTime      @default(now())
+  matchPlayers MatchPlayer[]
+  leaderboard  Leaderboard?
+}
+
+model Match {
+  id              String        @id @default(uuid())
+  startedAt       DateTime      @default(now())
+  endedAt         DateTime?
+  durationSeconds Int?
+  players         MatchPlayer[]
+}
+
+model MatchPlayer {
+  id      String @id @default(uuid())
+  matchId String
+  userId  String
+  kills   Int    @default(0)
+  deaths  Int    @default(0)
+  score   Int    @default(0)
+  
+  match   Match  @relation(fields: [matchId], references: [id])
+  user    User   @relation(fields: [userId], references: [id])
+}
+
+model Leaderboard {
+  userId        String   @id
+  totalKills    Int      @default(0)
+  totalDeaths   Int      @default(0)
+  totalScore    Int      @default(0)
+  matchesPlayed Int      @default(0)
+  lastUpdated   DateTime @default(now())
+  
+  user User @relation(fields: [userId], references: [id])
+}
