@@ -37,7 +37,7 @@ const GameCanvas: React.FC<GameCanvasProps> = ({ width, height }) => {
     y: number,
     size: number
   ) => {
-    ctx.fillStyle = "#fff";
+    ctx.fillStyle = "#000";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.font = `${size}px Arial`;
@@ -72,7 +72,7 @@ const GameCanvas: React.FC<GameCanvasProps> = ({ width, height }) => {
     ctx.clearRect(0, 0, width, height);
 
     // Draw background
-    ctx.fillStyle = "#f0f0f0";
+    ctx.fillStyle = "#F9F6EE";
     ctx.fillRect(0, 0, width, height);
 
     // Draw border
@@ -223,12 +223,12 @@ const GameCanvas: React.FC<GameCanvasProps> = ({ width, height }) => {
 
     // Draw minimap
     const minimapSize = 150;
-    const minimapX = width - minimapSize - 10;
-    const minimapY = 10;
+    const minimapX = 0;
+    const minimapY = 300;
     const minimapScale = minimapSize / Math.max(width, height);
 
     // Draw minimap background
-    ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
+    ctx.fillStyle = "#fff";
     ctx.fillRect(minimapX, minimapY, minimapSize, minimapSize);
 
     // Draw obstacles on minimap

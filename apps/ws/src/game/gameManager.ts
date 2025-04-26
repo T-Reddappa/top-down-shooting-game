@@ -27,7 +27,7 @@ export class GameManager {
       default: {
         obstacles: [
           { id: "obs1", position: { x: 100, y: 100 }, width: 100, height: 100 },
-          { id: "obs2", position: { x: 600, y: 400 }, width: 100, height: 100 },
+          { id: "obs2", position: { x: 500, y: 380 }, width: 80, height: 80 },
           { id: "obs3", position: { x: 400, y: 250 }, width: 50, height: 50 },
         ],
         spawns: [

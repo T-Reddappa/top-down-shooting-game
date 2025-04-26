@@ -1,7 +1,7 @@
 // apps/web/src/components/GameControls.tsx
 import React, { useEffect, useState, useRef } from "react";
 import { useGame } from "../contexts/GameContext";
-import { Position } from "@top-down-game/types";
+import { Position } from "@repo/types/types";
 
 interface GameControlsProps {
   canvasWidth: number;

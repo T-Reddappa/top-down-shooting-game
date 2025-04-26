@@ -68,7 +68,7 @@ const Game: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col items-center max-w-6xl mx-auto px-4 py-6">
+    <div className="flex flex-col items-center max-w-6xl mx-auto px-4 py-6 bg-gray-600">
       <div className="w-full flex justify-between items-center mb-4">
         <h1 className="text-2xl font-bold">Top-Down Shooter</h1>
         <div className="flex space-x-4">

@@ -8,6 +8,7 @@ export enum PowerupType {
   RAPID_FIRE = "RAPID_FIRE",
   SHIELD = "SHIELD",
   HEALTH_RESTORE = "HEALTH_RESTORE",
+  SPEED_BOOST = "SPEED_BOOST",
 }
 
 export interface Player {
